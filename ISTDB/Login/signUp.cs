@@ -11,6 +11,10 @@ namespace ISTDB
         {
             loadData();
         }
+
+        /// <summary>
+        /// loads valid logins from file
+        /// </summary>
         private void loadData()
         {
             string directory = Directory.GetCurrentDirectory();
@@ -24,11 +28,21 @@ namespace ISTDB
             }
         }
 
-
+        /// <summary>
+        /// creates id for user
+        /// </summary>
+        /// <returns>user id for system to store</returns>
         private int getIndex()
         {
             return login.Count;
         }
+
+        /// <summary>
+        /// creates login credentials and Id
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>bool indicating succes of signup</returns>
         public bool createAccount(string username, string password)
         {
             if(!userExists(username))
@@ -47,10 +61,20 @@ namespace ISTDB
                 return false;
             }
         }
+
+        /// <summary>
+        /// checks if user is already in system
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns>bool indicating if user is in system</returns>
         private bool userExists(string username)
         {
             return login.Exists(x => x.username == username);
         }
+
+        /// <summary>
+        /// saves user credentials to file
+        /// </summary>
         private void saveList()
         {
             string json = JsonSerializer.Serialize(login);

@@ -26,6 +26,12 @@ namespace ISTDB.spreadsheetRead
             }
         }*/
 
+
+        /// <summary>
+        /// Gets directory of specified resource 
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns>string of resource directory</returns>
         private static string getDirectory(string filename)
         {
             string directory = Directory.GetCurrentDirectory();
@@ -34,6 +40,13 @@ namespace ISTDB.spreadsheetRead
             return filePath;
         }
 
+
+        /// <summary>
+        /// Loads the worksheet containing timetable data for student
+        /// </summary>
+        /// <param name="uniqueId"></param>
+        /// <param name="file"></param>
+        /// <returns>Worksheet object</returns>
         private static WorkSheet loadWorkbook(int uniqueId, string file)
         {
             string filepath = getDirectory(file);
@@ -44,6 +57,10 @@ namespace ISTDB.spreadsheetRead
         }
 
 
+        /// <summary>
+        /// Sets the string for range of day
+        /// </summary>
+        /// <returns>String for range</returns>
         private static string getSessions()
         {
             //string week = getweek();
@@ -89,6 +106,12 @@ namespace ISTDB.spreadsheetRead
             }
             return sessions;
         }
+
+        /// <summary>
+        /// Collates session data
+        /// </summary>
+        /// <param name="range"></param>
+        /// <returns>List of session data for current day</returns>
         private List<classList> RowData(IronXL.Range range)
         {
             List<classList> sessions = new List<classList>();
@@ -107,6 +130,11 @@ namespace ISTDB.spreadsheetRead
             return sessions;
         }
 
+        /// <summary>
+        /// gets timetable data
+        /// </summary>
+        /// <param name="uniqueId"></param>
+        /// <returns>list of session data</returns>
         public List<classList> readTimetable(int uniqueId)
         {
             string filepath = "/Resources/timetable.xlsx";

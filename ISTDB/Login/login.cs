@@ -12,6 +12,9 @@ namespace ISTDB
             loadData();
         }
 
+        /// <summary>
+        /// Loads list of valid users and Id's
+        /// </summary>
         public void loadData()
         {
             string directory = Directory.GetCurrentDirectory();
@@ -25,6 +28,11 @@ namespace ISTDB
             }
         }
 
+        /// <summary>
+        /// Checks to see if user exists in the system
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns>bool indicating users presence</returns>
         private bool userExists(string username)
         {
             return storage.Exists(x => x.username == username);
@@ -49,6 +57,12 @@ namespace ISTDB
             return false;
         }
 
+        /// <summary>
+        /// hand out unique Id for user
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>unique user id or -1 if unsuccesful</returns>
         public int handoutId(string username, string password)
         {
             int uniqueId;

@@ -1,6 +1,9 @@
 ﻿using System;
 namespace ISTDB.spreadsheetRead
 {
+    /// <summary>
+    /// List type containing session data
+    /// </summary>
     public class classList
     {
         public int sessionNo { get; set; }
