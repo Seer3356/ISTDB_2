@@ -52,5 +52,19 @@ namespace ISTDB.Controllers
             var classes = data.readTimetable(uniqueId);
             return classes;
         }
+
+        /// <summary>
+        /// gets full timetable
+        /// </summary>
+        /// <param name="uniqueId"></param>
+        /// <returns>List<classList> of student full timetable</classList></returns>
+        [HttpGet]
+        [Route("getFullTimetable")]
+        public List<classList> getFullTimetable(int uniqueId)
+        {
+            importData data = new importData();
+            List<classList> stuff = data.getFullTimetable(uniqueId);
+            return stuff;
+        }
     }
 }

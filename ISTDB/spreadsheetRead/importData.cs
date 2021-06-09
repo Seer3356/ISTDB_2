@@ -144,5 +144,42 @@ namespace ISTDB.spreadsheetRead
             List<classList> data = RowData(range);
             return data;
         }
+
+        /// <summary>
+        /// Gets full fortnightly timetable
+        /// </summary>
+        /// <param name="uniqueId"></param>
+        /// <returns>full student timetable</returns>
+        public List<classList> getFullTimetable(int uniqueId)
+        {
+            string filepath = "/Resources/timetable.xlsx";
+            var worksheet = loadWorkbook(uniqueId, filepath);
+            var range = worksheet.GetRange("C2:E81");
+            List<classList> data = allData(range);
+            return data;
+        }
+
+        /// <summary>
+        /// gets all timetable data
+        /// </summary>
+        /// <param name="range"></param>
+        /// <returns>all classes</returns>
+        private List<classList> allData(IronXL.Range range)
+        {
+            List<classList> sessions = new List<classList>();
+            for (int i = 0; i < 80; i = i + 1)
+            {
+                classList data = new classList();
+                string teacher = range.Rows[i].Columns[0].ToString();
+                string session = range.Rows[i].Columns[1].ToString();
+                string room = range.Rows[i].Columns[2].ToString();
+                data.sessionNo = i + 1;
+                data.session = session;
+                data.teacher = (teacher);
+                data.room = (room);
+                sessions.Add(data);
+            }
+            return sessions;
+        }
     }
 }
