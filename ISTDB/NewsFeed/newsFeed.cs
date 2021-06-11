@@ -47,6 +47,10 @@ namespace ISTDB.NewsFeed
             return news;
         }
 
+        /// <summary>
+        /// Gets full list of news items
+        /// </summary>
+        /// <returns>Full list of news items</returns>
         public List<newsFeedList> getNewsItems()
         {
             return news;

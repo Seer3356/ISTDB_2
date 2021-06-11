@@ -83,6 +83,10 @@ namespace ISTDB.Controllers
             return true;
         }
 
+        /// <summary>
+        /// API endpoint for getting news items
+        /// </summary>
+        /// <returns>List of current news items</returns>
         [HttpGet]
         [Route("getNewsItems")]
         public List<newsFeedList> getNewsItems()
