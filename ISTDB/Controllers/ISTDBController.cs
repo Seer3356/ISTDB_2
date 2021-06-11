@@ -96,6 +96,10 @@ namespace ISTDB.Controllers
             return newsFeed;
         }
 
+        /// <summary>
+        /// API call to remove specified news item
+        /// </summary>
+        /// <param name="itemName"></param>
         [HttpDelete]
         [Route("deleteNewsitem")]
         public void deleteNewsItem(string itemName)
