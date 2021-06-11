@@ -95,5 +95,13 @@ namespace ISTDB.Controllers
             List<newsFeedList> newsFeed = news.getNewsItems();
             return newsFeed;
         }
+
+        [HttpDelete]
+        [Route("deleteNewsitem")]
+        public void deleteNewsItem(string itemName)
+        {
+            newsFeed news = new newsFeed();
+            news.deletenewsItem(itemName);
+        }
     }
 }

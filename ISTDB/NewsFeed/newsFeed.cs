@@ -56,6 +56,11 @@ namespace ISTDB.NewsFeed
             return news;
         }
 
+        public void deletenewsItem(string itemName)
+        {
+            news.RemoveAll(x => x.newsItem == itemName);
+        }
+
         /// <summary>
         /// saves changes to list to file
         /// </summary>
