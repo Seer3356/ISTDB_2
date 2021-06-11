@@ -83,5 +83,13 @@ namespace ISTDB.Controllers
             return true;
         }
 
+        [HttpGet]
+        [Route("deleteNewsItem")]
+        public List<newsFeedList> getNewsItems()
+        {
+            newsFeed news = new newsFeed();
+            List<newsFeedList> newsFeed = news.getNewsItems();
+            return newsFeed;
+        }
     }
 }

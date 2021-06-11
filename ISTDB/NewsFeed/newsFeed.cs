@@ -47,6 +47,11 @@ namespace ISTDB.NewsFeed
             return news;
         }
 
+        public List<newsFeedList> getNewsItems()
+        {
+            return news;
+        }
+
         /// <summary>
         /// saves changes to list to file
         /// </summary>
