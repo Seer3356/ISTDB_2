@@ -6,7 +6,7 @@
 
 ##### Type:
 
-> HttpsPost
+> HttpPost
 
 ##### URL Extension:
 
@@ -15,3 +15,21 @@
 ##### Use:
 
 Creates new user login for ISTDB system.
+
+#### Login
+
+##### Type:
+
+> HttpPost
+
+##### URL Extention:
+
+> /login?username=<insertusernamehere>&password=<insertpasswordhere>
+
+##### Returns:
+
+Unique ID used to fetching timetables & personal data.
+
+##### Use:
+
+Logs user into ISTDB system and hands out unique ID.
