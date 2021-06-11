@@ -40,6 +40,13 @@ namespace ISTDB.Controllers
             return sign.createAccount(username, password);
         }
 
+        [HttpDelete]
+        [Route("deleteUser")]
+        public void deleteUser(string username)
+        {
+
+        }
+
         /// <summary>
         /// Fetches timetable data for current date
         /// </summary>
