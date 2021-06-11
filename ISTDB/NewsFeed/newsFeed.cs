@@ -43,7 +43,7 @@ namespace ISTDB.NewsFeed
             string json = JsonSerializer.Serialize(news);
             string directory = Directory.GetCurrentDirectory();
             //Potential MacOS DIfference, filing system works differently, will need revision on port to windows
-            string filePath = directory + "\\Resources\\newsFeed.json";
+            string filePath = directory + "/Resources/newsFeed.json";
             File.WriteAllText(filePath, json);
         }
     }
