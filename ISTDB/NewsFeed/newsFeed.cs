@@ -15,6 +15,9 @@ namespace ISTDB.NewsFeed
             loadNewsFeedList();
         }
 
+        /// <summary>
+        /// loads news feed list to new list
+        /// </summary>
         private void loadNewsFeedList()
         {
             string directory = Directory.GetCurrentDirectory();
@@ -27,7 +30,13 @@ namespace ISTDB.NewsFeed
                 news = new List<newsFeedList>();
             }
         }
-
+        
+        /// <summary>
+        /// Adds news item to dtabase
+        /// </summary>
+        /// <param name="itemName"></param>
+        /// <param name="itemBody"></param>
+        /// <returns>list of news items</returns>
         public List<newsFeedList> newsFeedAdd(string itemName, long itemBody)
         {
             newsFeedList feed = new newsFeedList();
@@ -38,6 +47,9 @@ namespace ISTDB.NewsFeed
             return news;
         }
 
+        /// <summary>
+        /// saves changes to list to file
+        /// </summary>
         private void saveList()
         {
             string json = JsonSerializer.Serialize(news);

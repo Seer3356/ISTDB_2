@@ -68,7 +68,13 @@ namespace ISTDB.Controllers
             return stuff;
         }
 
-        [HttpGet]
+        /// <summary>
+        /// Adds a news item to the database
+        /// </summary>
+        /// <param name="newsItem"></param>
+        /// <param name="itemBody"></param>
+        /// <returns>bool indicating success</returns>
+        [HttpPost]
         [Route("getNewsFeed")]
         public bool getNewsFeed(string newsItem, long itemBody)
         {
@@ -76,5 +82,6 @@ namespace ISTDB.Controllers
             news.newsFeedAdd(newsItem, itemBody);
             return true;
         }
+
     }
 }
