@@ -75,8 +75,8 @@ namespace ISTDB.Controllers
         /// <param name="itemBody"></param>
         /// <returns>bool indicating success</returns>
         [HttpPost]
-        [Route("getNewsFeed")]
-        public bool getNewsFeed(string newsItem, long itemBody)
+        [Route("addNewsFeed")]
+        public bool addNewsFeed(string newsItem, long itemBody)
         {
             newsFeed news = new newsFeed();
             news.newsFeedAdd(newsItem, itemBody);
