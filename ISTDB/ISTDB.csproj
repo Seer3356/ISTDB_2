@@ -6,7 +6,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="Login\" />
     <Folder Include="spreadsheetRead\" />
   </ItemGroup>

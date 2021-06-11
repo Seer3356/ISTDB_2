@@ -1,6 +1,7 @@
 ﻿using ISTDB.spreadsheetRead;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using ISTDB.NewsFeed;
 
 namespace ISTDB.Controllers
 {
@@ -65,6 +66,15 @@ namespace ISTDB.Controllers
             importData data = new importData();
             List<classList> stuff = data.getFullTimetable(uniqueId);
             return stuff;
+        }
+
+        [HttpGet]
+        [Route("getNewsFeed")]
+        public bool getNewsFeed(string newsItem, long itemBody)
+        {
+            newsFeed news = new newsFeed();
+            news.newsFeedAdd(newsItem, itemBody);
+            return true;
         }
     }
 }
