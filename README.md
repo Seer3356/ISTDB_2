@@ -52,3 +52,21 @@ Void
 
 Deletes user from ISTDB system. (administration purposes only)
 
+#### Get Timetable
+
+##### Type:
+
+> HttpGet
+
+##### URL Extension:
+
+> /getTimetable?uniqueId=<insertuniqueidhere>
+
+##### Returns:
+
+List object of type <classList> 
+
+##### Use:
+
+Getting the days sessions.
+
