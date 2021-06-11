@@ -70,3 +70,21 @@ List object of type <classList>
 
 Getting the days sessions.
 
+#### Get Full Timetable
+
+##### Type:
+
+> HttpGet
+
+##### URL Extension:
+
+> /getFullTimetable?uniqueId=<insertuniqueidhere>
+
+##### Returns:
+
+List object of type <classList>
+
+##### Use:
+
+Obtaining students FULL timetable.
+
