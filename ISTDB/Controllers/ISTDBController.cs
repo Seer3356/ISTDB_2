@@ -84,7 +84,7 @@ namespace ISTDB.Controllers
         }
 
         [HttpGet]
-        [Route("deleteNewsItem")]
+        [Route("getNewsItems")]
         public List<newsFeedList> getNewsItems()
         {
             newsFeed news = new newsFeed();
