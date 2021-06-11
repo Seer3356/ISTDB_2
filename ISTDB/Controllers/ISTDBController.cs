@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using ISTDB.NewsFeed;
+using ISTDB.Login;
 
 namespace ISTDB.Controllers
 {
@@ -40,11 +41,16 @@ namespace ISTDB.Controllers
             return sign.createAccount(username, password);
         }
 
+        /// <summary>
+        /// API call to remove user from database
+        /// </summary>
+        /// <param name="username"></param>
         [HttpDelete]
         [Route("deleteUser")]
         public void deleteUser(string username)
         {
-
+            deleteUser delete = new deleteUser();
+            delete.deletelogin(username);
         }
 
         /// <summary>

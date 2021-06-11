@@ -14,6 +14,7 @@ namespace ISTDB.Login
         {
             loadData();
         }
+        
         public void loadData()
         {
             string directory = Directory.GetCurrentDirectory();
@@ -27,6 +28,10 @@ namespace ISTDB.Login
             }
         }
 
+        /// <summary>
+        /// Deletes a specified user from database
+        /// </summary>
+        /// <param name="user"></param>
         public void deletelogin(string user)
         {
             storage.RemoveAll(x => x.username == user);
